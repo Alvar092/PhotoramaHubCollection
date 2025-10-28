@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B8K-WP-AWM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B8K-WP-AWM">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -88,11 +88,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yk0-OT-Z2y">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
-                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OB7-hP-MT8">
-                                <rect key="frame" x="0.0" y="774" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="712" width="393" height="48"/>
                                 <items>
                                     <barButtonItem title="Tags" id="kcL-nY-DF0">
                                         <connections>
@@ -101,18 +98,22 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yk0-OT-Z2y">
+                                <rect key="frame" x="0.0" y="188" width="393" height="516"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="516" id="hE8-EL-VYn"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y7g-RM-uiw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Y7g-RM-uiw" firstAttribute="bottom" secondItem="Yk0-OT-Z2y" secondAttribute="bottom" id="OY3-Ky-ZVh"/>
-                            <constraint firstItem="Yk0-OT-Z2y" firstAttribute="leading" secondItem="Y7g-RM-uiw" secondAttribute="leading" id="WHG-tR-3iX"/>
-                            <constraint firstItem="Yk0-OT-Z2y" firstAttribute="top" secondItem="P0O-0O-hZa" secondAttribute="top" id="WoT-WU-AA4"/>
-                            <constraint firstItem="OB7-hP-MT8" firstAttribute="bottom" secondItem="Yk0-OT-Z2y" secondAttribute="bottom" id="Ye8-j1-UU2"/>
-                            <constraint firstItem="OB7-hP-MT8" firstAttribute="trailing" secondItem="Yk0-OT-Z2y" secondAttribute="trailing" id="g85-3R-4xq"/>
-                            <constraint firstItem="OB7-hP-MT8" firstAttribute="leading" secondItem="Yk0-OT-Z2y" secondAttribute="leading" id="k1d-60-wPE"/>
-                            <constraint firstItem="OB7-hP-MT8" firstAttribute="top" secondItem="Y7g-RM-uiw" secondAttribute="top" constant="671" id="yAr-Gd-aSz"/>
-                            <constraint firstItem="Y7g-RM-uiw" firstAttribute="trailing" secondItem="Yk0-OT-Z2y" secondAttribute="trailing" id="yF3-7D-9rg"/>
+                            <constraint firstItem="Y7g-RM-uiw" firstAttribute="bottom" secondItem="OB7-hP-MT8" secondAttribute="bottom" constant="24" id="2fH-JP-igy"/>
+                            <constraint firstItem="OB7-hP-MT8" firstAttribute="trailing" secondItem="Y7g-RM-uiw" secondAttribute="trailing" id="2zk-Sr-Iza"/>
+                            <constraint firstItem="Yk0-OT-Z2y" firstAttribute="leading" secondItem="Y7g-RM-uiw" secondAttribute="leading" id="8uf-EW-dPb"/>
+                            <constraint firstItem="Yk0-OT-Z2y" firstAttribute="top" secondItem="Y7g-RM-uiw" secondAttribute="top" constant="16" id="Ebq-hj-Waj"/>
+                            <constraint firstItem="OB7-hP-MT8" firstAttribute="leading" secondItem="Y7g-RM-uiw" secondAttribute="leading" id="Mz4-3h-h6d"/>
+                            <constraint firstItem="Yk0-OT-Z2y" firstAttribute="trailing" secondItem="Y7g-RM-uiw" secondAttribute="trailing" id="YOM-HV-fKf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yF0-jm-Gef"/>
@@ -129,19 +130,19 @@
             <objects>
                 <tableViewController id="j54-xT-YHZ" customClass="TagsViewController" customModule="Photorama" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="37T-Dq-4l7">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="hAl-xA-hzr" style="IBUITableViewCellStyleDefault" id="FCZ-9Q-9fi">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="51"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FCZ-9Q-9fi" id="k8P-cc-tMu">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="51"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hAl-xA-hzr">
-                                            <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
+                                            <rect key="frame" x="20" y="0.0" width="353" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -178,7 +179,7 @@
             <objects>
                 <navigationController id="xUh-sk-JYY" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PEs-Mj-Xh3">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <rect key="frame" x="0.0" y="16" width="393" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -195,7 +196,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B8K-WP-AWM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jfH-d2-0t1">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

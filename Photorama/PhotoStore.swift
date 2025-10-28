@@ -46,7 +46,9 @@ class PhotoStore {
         return URLSession(configuration: config)
     }()
    
-    private func processPhotosRequest(data: Data?, error: Error?, completion: @escaping (PhotosResult)-> Void) {
+    private func processPhotosRequest(data: Data?,
+                                      error: Error?,
+                                      completion: @escaping (PhotosResult)-> Void) {
         guard let jsonData = data else {
             completion(.failure(error!))
             return
@@ -63,6 +65,7 @@ class PhotoStore {
                 completion(.failure(error))
                 return
             }
+            
             switch result {
             case let .success(photos):
                 let photoIDs = photos.map { return $0.objectID }
@@ -109,7 +112,7 @@ class PhotoStore {
             preconditionFailure("Photo expected to have a remote URL")
         }
       //No estoy seguro de ese as!, el libro dice que es sin !
-        let request = URLRequest(url: photoURL as! URL)
+        let request = URLRequest(url: photoURL as URL)
         
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in

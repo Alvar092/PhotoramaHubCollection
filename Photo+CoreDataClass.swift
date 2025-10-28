@@ -2,12 +2,14 @@
 //  Photo+CoreDataClass.swift
 //  Photorama
 //
-//  Created by Álvaro Entrena Casas on 7/8/24.
+//  Created by Álvaro Entrena Casas on 28/10/25.
 //
 //
 
-import Foundation
-import CoreData
+public import Foundation
+public import CoreData
+
+public typealias PhotoCoreDataClassSet = NSSet
 
 @objc(Photo)
 public class Photo: NSManagedObject {

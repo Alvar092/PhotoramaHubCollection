@@ -46,7 +46,9 @@ class TagsViewController: UITableViewController{
         
         alertController.addAction(cancelAction)
         
-        present(alertController, animated: true, completion: nil)
+        present(alertController,
+                animated: true,
+                completion: nil)
     }
     
     var store: PhotoStore!
@@ -94,6 +96,7 @@ class TagsViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let tag = tagDataSource.tags[indexPath.row]
         
         if let index = selectedIndexPaths.firstIndex(of: indexPath) {
@@ -103,6 +106,7 @@ class TagsViewController: UITableViewController{
             selectedIndexPaths.append(indexPath)
             photo.addToTags(tag)
         }
+        
         do {
             try store.persistentContainer.viewContext.save()
         } catch {
@@ -112,7 +116,9 @@ class TagsViewController: UITableViewController{
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+                            willDisplay cell: UITableViewCell,
+                            forRowAt indexPath: IndexPath) {
         if selectedIndexPaths.firstIndex(of: indexPath) != nil {
             cell.accessoryType = .checkmark
         } else {

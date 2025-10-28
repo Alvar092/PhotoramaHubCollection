@@ -2,13 +2,15 @@
 //  Photo+CoreDataProperties.swift
 //  Photorama
 //
-//  Created by Álvaro Entrena Casas on 9/8/24.
+//  Created by Álvaro Entrena Casas on 28/10/25.
 //
 //
 
-import Foundation
-import CoreData
+public import Foundation
+public import CoreData
 
+
+public typealias PhotoCoreDataPropertiesSet = NSSet
 
 extension Photo {
 
@@ -16,10 +18,10 @@ extension Photo {
         return NSFetchRequest<Photo>(entityName: "Photo")
     }
 
-    @NSManaged public var dateTaken: Date?
-    @NSManaged public var photoID: String?
-    @NSManaged public var remoteURL: NSObject?
     @NSManaged public var title: String?
+    @NSManaged public var photoID: String?
+    @NSManaged public var remoteURL: NSURL?
+    @NSManaged public var dateTaken: Date?
     @NSManaged public var tags: NSSet?
 
 }
