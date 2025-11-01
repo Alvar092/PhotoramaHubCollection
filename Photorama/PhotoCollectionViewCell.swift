@@ -21,6 +21,14 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let identifier = "PhotoCollectionViewCell"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! PhotoCollectionViewCell
+        
+        return cell
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

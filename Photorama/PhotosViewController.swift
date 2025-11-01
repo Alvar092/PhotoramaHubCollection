@@ -30,6 +30,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
         let photo = photoDataSource.photos[indexPath.row]
         
         //Download the image data, which could take some time
